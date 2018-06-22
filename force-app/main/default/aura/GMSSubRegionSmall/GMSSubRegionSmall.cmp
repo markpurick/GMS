@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:attribute name="recordId" type="String" />
+	<aura:attribute name="reg" type="Object"/>
+    <aura:attribute name="simplereg" type="Object"/>
+    <aura:attribute name="regError" type="String"/>
+    
+    <force:recordData aura:id="regLoader"
+        recordId="{!v.recordId}"
+        fields="Id,Name"
+        targetRecord="{!v.reg}"
+        targetFields="{!v.simplereg}"
+        targetError="{!v.regError}"
+    />
+	
+    <lightning:layout class="botMargin8">
+        <lightning:layoutItem flexibility="auto" padding="horizontal-small">
+            <ui:outputText value="{!v.simplereg.Name}" class="gms-strong" />
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

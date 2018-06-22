@@ -1,0 +1,6 @@
+.THIS div {
+    font-size: 85%;
+}
+.THIS div.UFCapitalize {
+    text-transform: uppercase;
+}

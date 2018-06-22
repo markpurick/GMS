@@ -1,0 +1,18 @@
+.THIS label {
+    font-size: 85%;
+}
+.THIS UF-button-t-margin {
+    margin-top: 20px;
+}
+.THIS UF-Container {
+    width: 100%;
+}
+.THIS .btn-wide {
+    padding: 5px 20px;
+    margin-top: 0px;
+}
+@media (max-width: 480px) {
+    .THIS UF-Container {
+        margin-left: -10px;
+    }
+}

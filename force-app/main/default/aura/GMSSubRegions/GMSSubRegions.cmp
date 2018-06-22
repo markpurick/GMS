@@ -1,0 +1,14 @@
+<aura:component controller="GMSSubRegionsByRegion"
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="subregions" type="List"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <ui:scrollerWrapper class="scrollerSize">
+        <div class="slds-scrollable" style="height: 36vh;">
+            <aura:iteration items="{!v.subregions}" var="reg">
+                <c:GMSSubRegionSmall recordId="{!reg.Id}"></c:GMSSubRegionSmall>
+            </aura:iteration>
+        </div>
+    </ui:scrollerWrapper>
+    <div style="padding-bottom: 6px;"> </div>
+</aura:component>

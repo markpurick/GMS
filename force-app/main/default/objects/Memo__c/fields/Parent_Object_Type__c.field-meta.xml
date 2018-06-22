@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Object_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Parent Object Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Archetype__c</fullName>
+                <default>false</default>
+                <label>Archetype__c</label>
+            </value>
+            <value>
+                <fullName>Archetype_Power__c</fullName>
+                <default>false</default>
+                <label>Archetype_Power__c</label>
+            </value>
+            <value>
+                <fullName>Character__c</fullName>
+                <default>false</default>
+                <label>Character__c</label>
+            </value>
+            <value>
+                <fullName>Character_Power__c</fullName>
+                <default>false</default>
+                <label>Character_Power__c</label>
+            </value>
+            <value>
+                <fullName>Custom_Data__c</fullName>
+                <default>false</default>
+                <label>Custom_Data__c</label>
+            </value>
+            <value>
+                <fullName>Effect__c</fullName>
+                <default>false</default>
+                <label>Effect__c</label>
+            </value>
+            <value>
+                <fullName>Encounter__c</fullName>
+                <default>false</default>
+                <label>Encounter__c</label>
+            </value>
+            <value>
+                <fullName>Encounter_NPC__c</fullName>
+                <default>false</default>
+                <label>Encounter_NPC__c</label>
+            </value>
+            <value>
+                <fullName>Plot Point</fullName>
+                <default>false</default>
+                <label>Plot Point</label>
+            </value>
+            <value>
+                <fullName>Region</fullName>
+                <default>false</default>
+                <label>Region</label>
+            </value>
+            <value>
+                <fullName>RPG Campaign</fullName>
+                <default>false</default>
+                <label>RPG Campaign</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

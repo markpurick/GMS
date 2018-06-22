@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Power</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Powers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action Type --></label>
+        <name>Action_Type__c</name>
+        <picklistValues>
+            <masterLabel>Free</masterLabel>
+            <translation><!-- Free --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minor</masterLabel>
+            <translation><!-- Minor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Affected Stat --></label>
+        <name>Affected_Stat__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affected Value --></label>
+        <name>Affected_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Details such as: range, damage, damage type, area of effect, etc. --></help>
+        <label><!-- Details --></label>
+        <name>Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- When does the power recharge, if that is a mechanic in your system. --></help>
+        <label><!-- Recharge --></label>
+        <name>Recharge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ruleset --></label>
+        <name>Ruleset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subtype --></label>
+        <name>Subtype__c</name>
+        <picklistValues>
+            <masterLabel>Abjuration</masterLabel>
+            <translation><!-- Abjuration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Buff</masterLabel>
+            <translation><!-- Buff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conjuration</masterLabel>
+            <translation><!-- Conjuration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Divination</masterLabel>
+            <translation><!-- Divination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evocation</masterLabel>
+            <translation><!-- Evocation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heal</masterLabel>
+            <translation><!-- Heal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Arcane</masterLabel>
+            <translation><!-- Arcane --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Divine</masterLabel>
+            <translation><!-- Divine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Melee</masterLabel>
+            <translation><!-- Melee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ranged</masterLabel>
+            <translation><!-- Ranged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trap</masterLabel>
+            <translation><!-- Trap --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

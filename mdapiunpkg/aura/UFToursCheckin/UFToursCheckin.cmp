@@ -1,0 +1,120 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="monthOptions" type="List" />
+    <aura:attribute name="yearOptions" type="List" />
+    <aura:attribute name="dayOptions" type="List" />
+    <aura:attribute name="timeOptions" type="List" />
+    <aura:attribute name="monthVar" type="String" />
+    <aura:attribute name="dayVar" type="String" />
+    <aura:attribute name="yearVar" type="String" />
+    <aura:attribute name="timeVar" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.loadOptions}" />
+
+    <div class="slds-grid slds-wrap slds-grid_pull-padded" width="100%">
+        <div class="slds-p-horizontal--small slds-text-body--regular slds-size--1-of-4">
+            <div onclick="{!c.switchOpenClass}">
+                <div id="UFMonthPickList" aura:id="UFMonthPickList" class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-01"></label>
+                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input">
+                            <input type="search" id="text-input-01" placeholder="{!v.monthVar}" class="slds-lookup__search-input slds-input" aria-owns="option-list-01" role="combobox" aria-activedescendant="" aria-expanded="false" readonly="" />
+                            <button class="slds-button slds-input__icon slds-text-color--default" aria-expanded="false" tabindex="-1" title="settings">
+                                <span style="text-align: left"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="slds-dropdown slds-dropdown--left" role="listbox">
+                        <ul id="option-list-01" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+                            <aura:iteration items="{!v.monthOptions}" var="monthItem">
+                                <li role="presentation" data-uf-date="{!monthItem.value}" onclick="{!c.setMonth}" label="January">
+                                    <span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0">
+                                        <span class="slds-truncate">{!monthItem.label}</span>
+                                    </span>
+                                </li>
+                            </aura:iteration>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-text-body--regular slds-size--1-of-4">
+            <div onclick="{!c.switchOpenClass}">
+                <div id="UFDayPickList" aura:id="UFDayPickList" class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-01"></label>
+                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input">
+                            <input type="search" id="text-input-03" placeholder="{!v.dayVar}" class="slds-lookup__search-input slds-input" aria-owns="option-list-01" role="combobox" aria-activedescendant="" aria-expanded="false" readonly="" />
+                            <button class="slds-button slds-input__icon slds-text-color--default" aria-expanded="false" tabindex="-1" title="settings">
+                                <span style="text-align: left"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="slds-dropdown slds-dropdown--left" role="listbox">
+                        <ul id="option-list-03" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+                            <aura:iteration items="{!v.dayOptions}" var="dayItem">
+                                <li role="presentation" data-uf-date="{!dayItem.value}" onclick="{!c.setDay}">
+                                    <span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0">
+                                        <span class="slds-truncate">{!dayItem.label}</span>
+                                    </span>
+                                </li>
+                            </aura:iteration>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-text-body--regular slds-size--1-of-4">
+            <div onclick="{!c.switchOpenClass}">
+                <div id="UFYearPickList" aura:id="UFYearPickList" class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-01"></label>
+                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input">
+                            <input type="search" id="text-input-02" placeholder="{!v.yearVar}" class="slds-lookup__search-input slds-input" aria-owns="option-list-01" role="combobox" aria-activedescendant="" aria-expanded="false" readonly="" />
+                            <button class="slds-button slds-input__icon slds-text-color--default" aria-expanded="false" tabindex="-1" title="settings">
+                                <span style="text-align: left"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="slds-dropdown slds-dropdown--left" role="listbox">
+                        <ul id="option-list-02" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+                            <aura:iteration items="{!v.yearOptions}" var="yearItem">
+                                <li role="presentation" data-uf-date="{!yearItem.value}" onclick="{!c.setYear}">
+                                    <span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0">
+                                        <span class="slds-truncate">{!yearItem.label}</span>
+                                    </span>
+                                </li>
+                            </aura:iteration>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-text-body--regular slds-size--1-of-4">
+            <div onclick="{!c.switchOpenClass}">
+                <div id="UFTimePickList" aura:id="UFTimePickList" class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-01"></label>
+                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input">
+                            <input type="search" id="text-input-01" placeholder="{!v.timeVar}" class="slds-lookup__search-input slds-input" aria-owns="option-list-01" role="combobox" aria-activedescendant="" aria-expanded="false" readonly="" />
+                            <button class="slds-button slds-input__icon slds-text-color--default" aria-expanded="false" tabindex="-1" title="settings">
+                                <span style="text-align: left"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="slds-dropdown slds-dropdown--left" role="listbox">
+                        <ul id="option-list-04" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+                            <aura:iteration items="{!v.timeOptions}" var="timeItem">
+                                <li role="presentation" data-uf-date="{!timeItem.value}" onclick="{!c.setTime}">
+                                    <span class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0">
+                                        <span class="slds-truncate">{!timeItem.label}</span>
+                                    </span>
+                                </li>
+                            </aura:iteration>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<br />
+
+</aura:component>

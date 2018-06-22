@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Custom Data</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Custom Data</value>
+    </caseValues>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Table --></label>
+        <name>Parent_Table__c</name>
+        <relationshipLabel><!-- Custom Data (Parent Table) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Table to which the column belongs or column to which this record belongs. Blank if a Table name. --></help>
+        <label><!-- Parent Column --></label>
+        <name>Parent_Table_or_Column__c</name>
+        <relationshipLabel><!-- Custom Data --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Row Number --></label>
+        <name>Row_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this a table name, column name, or record value? --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Column</masterLabel>
+            <translation><!-- Column --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Record</masterLabel>
+            <translation><!-- Record --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Table</masterLabel>
+            <translation><!-- Table --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Custom Data Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,75 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes" 
+   access="global">
+    <aura:attribute name="recordId" type="String" />
+	<aura:attribute name="char" type="Object"/>
+    <aura:attribute name="simpleChar" type="Object"/>
+    <aura:attribute name="charError" type="String"/>
+    
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.getCharacter}"/> -->
+    <aura:handler event="c:GMSCharacterEvent" action="{!c.handleApplicationEvent}"/>
+    
+    <force:recordData aura:id="charRecordLoader"
+        recordId="{!v.recordId}"
+        fields="Name,Character_s_Archetype__c,Race__c,Stat_1_Label__c,Stat_1__c,Stat_2_Label__c,Stat_2__c,Stat_3_Label__c,Stat_3__c,Stat_4_Label__c,Stat_4__c,Stat_5_Label__c,Stat_5__c,Stat_6_Label__c,Stat_6__c,Stat_7_Label__c,Stat_7__c,Stat_8_Label__c,Stat_8__c,Stat_9_Label__c,Stat_9__c,Stat_10_Label__c,Stat_10__c"
+        targetRecord="{!v.char}"
+        targetFields="{!v.simpleChar}"
+        targetError="{!v.charError}"
+    />
+    
+    <div class="c-container" style="text-align: left;">
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Name}
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Race__c}
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Character_s_Archetype__c}
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Stat_1_Label__c}&nbsp;{!v.simpleChar.Stat_1__c}
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Stat_2_Label__c}&nbsp;{!v.simpleChar.Stat_2__c}
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Stat_3_Label__c}&nbsp;{!v.simpleChar.Stat_3__c}
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Stat_4_Label__c}&nbsp;{!v.simpleChar.Stat_4__c}
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Stat_5_Label__c}&nbsp;{!v.simpleChar.Stat_5__c}
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Stat_6_Label__c}&nbsp;{!v.simpleChar.Stat_6__c}
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Stat_7_Label__c}&nbsp;{!v.simpleChar.Stat_7__c}
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Stat_8_Label__c}&nbsp;{!v.simpleChar.Stat_8__c}
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Stat_9_Label__c}&nbsp;{!v.simpleChar.Stat_9__c}
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.simpleChar.Stat_10_Label__c}&nbsp;{!v.simpleChar.Stat_10__c}
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    
+</aura:component>

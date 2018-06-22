@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="region" type="Object"/>
+    <aura:attribute name="simpleregion" type="Object"/>
+    <aura:attribute name="regionError" type="String"/>
+    
+    <force:recordData aura:id="regionLoader"
+        recordId="{!v.recordId}"
+        fields="Id,Region_Map__c"
+        targetRecord="{!v.region}"
+        targetFields="{!v.simpleregion}"
+        targetError="{!v.regionError}"
+    />
+	<div class="slds-align_absolute-center" style="height: 20rem;">
+        <lightning:layout class="botMargin8">
+            <lightning:layoutItem flexibility="auto" class="slds-m-around_x-small">
+                <ui:outputRichText value="{!v.simpleregion.Region_Map__c}" />
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

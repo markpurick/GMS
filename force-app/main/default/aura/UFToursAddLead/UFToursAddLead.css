@@ -1,0 +1,28 @@
+.THIS .uf-font {
+    font-size: 14px;
+}
+.THIS .uf-error-text {
+    color: red;
+}
+.THIS input::-webkit-input-placeholder { font-size:14px; color: rgba(84, 105, 141,.5); }
+.THIS input::-moz-placeholder { font-size:14px; color: rgba(84, 105, 141,.5); } /* firefox 19+ */
+.THIS input:-ms-input-placeholder { font-size:14px; color: rgba(84, 105, 141,.5); } /* ie */
+.THIS input:-moz-placeholder { font-size:14px; color: rgba(84, 105, 141,.5); }
+.THIS .uf-wide-input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0px 10px 0px 10px;
+}
+.THIS .slds-input {
+    line-height: 28px;
+    font-size: 14px;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+}
+.THIS .uf-picklist-btn {
+    padding: 0px 5px 0px 10px;
+}
+.THIS .slds-input-full {
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+}

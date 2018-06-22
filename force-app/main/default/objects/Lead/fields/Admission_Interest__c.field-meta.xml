@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Admission_Interest__c</fullName>
+    <externalId>false</externalId>
+    <label>Admission Interest</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Freshman Admission</fullName>
+                <default>false</default>
+                <label>Freshman Admission</label>
+            </value>
+            <value>
+                <fullName>Transfer Admission</fullName>
+                <default>false</default>
+                <label>Transfer Admission</label>
+            </value>
+            <value>
+                <fullName>Graduate Admission</fullName>
+                <default>false</default>
+                <label>Graduate Admission</label>
+            </value>
+            <value>
+                <fullName>Professional School Admission</fullName>
+                <default>false</default>
+                <label>Professional School Admission</label>
+            </value>
+            <value>
+                <fullName>I have applied to the University of Florida</fullName>
+                <default>false</default>
+                <label>I have applied to the University of Florida</label>
+            </value>
+            <value>
+                <fullName>I have been admitted to the University of Florida</fullName>
+                <default>false</default>
+                <label>I have been admitted to the University of Florida</label>
+            </value>
+            <value>
+                <fullName>I do not intend to apply</fullName>
+                <default>false</default>
+                <label>I do not intend to apply</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

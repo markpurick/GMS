@@ -1,0 +1,204 @@
+<aura:component controller="UFToursController" implements="flexipage:availableForAllPageTypes" access="global">
+    <ltng:require styles="{!$Resource.Bootstrap + '/bootstrap-3.3.7-dist/css/bootstrap.css'}" />
+    <aura:attribute name="statusOptions" type="List" />
+    <aura:attribute name="monthOptions" type="List" />
+    <aura:attribute name="yearOptions" type="List" />
+    <aura:attribute name="dayOptions" type="List" />
+    <aura:attribute name="timeOptions" type="List" />
+    <aura:attribute name="dependantOptions" type="List" />
+    <aura:attribute name="activeCampaign" type="String" />
+    <aura:attribute name="selectedCampaign" type="String" />
+    <aura:attribute name="campaignList" type="Campaign[]" />
+    <aura:attribute name="memberList" type="CampaignMember[]" />
+    <aura:attribute name="blankList" type="List" />
+    <aura:attribute name="monthVar" type="SelectOption" />
+    <aura:attribute name="dayVar" type="SelectOption" />
+    <aura:attribute name="yearVar" type="SelectOption" />
+    <aura:attribute name="testTimeValue" type="string" />
+    <aura:attribute name="testTimeLabel" type="string" />
+    <aura:handler name="init" value="{!this}" action="{!c.loadOptions}" />
+    <aura:handler name="members" value="{!v.memberList}" action="{!c.loadMembers}" />
+    <aura:handler name="campaigns" value="{!v.campaignList}" action="{!c.loadCampaigns}" />
+    <aura:registerEvent name="campaignSelected" type="c:UFToursCampaignEvent" />
+    <aura:method name="reloadMembers" action="{!c.loadMembers}" />
+
+    <nav class="navbar fixed-top">
+        <br />
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem flexibility="auto" class="col-xs-3">
+                <div class="slds-col">
+                    <div onclick="{!c.switchOpenClass}">
+                        <div id="UFMonthPickList" aura:id="UFMonthPickList" class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click uf-wide-input">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input slds-input-full">
+                                    <input type="search" id="text-input-01" placeholder="{!v.monthVar.label}"
+                                           class="slds-input slds-text-align_center slds-m-around_x-small slds-text-body_regular uf-font uf-picklist-btn" 
+                                           aria-owns="option-list-01" role="combobox" aria-activedescendant="" aria-expanded="false" readonly="readonly" />
+                                    <button class="slds-button slds-input__icon slds-text-color--default" aria-expanded="false" tabindex="-1" title="settings">
+                                        <span style="text-align: left"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="slds-dropdown slds-dropdown--center slds-dropdown_large" role="listbox">
+                                <ul id="option-list-01" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+                                    <aura:iteration items="{!v.monthOptions}" var="monthItem">
+                                        <li role="presentation" onclick="{!c.setMonth}" label="January">
+                                            <span data-uf-date="{!monthItem.value}" class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0">
+                                                <span data-uf-date="{!monthItem.value}" class="slds-truncate uf-font" onclick="{!c.setMonth}">{!monthItem.label}</span>
+                                            </span>
+                                        </li>
+                                    </aura:iteration>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            	</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" class="col-xs-3">
+                <div class="slds-col">
+                    <div onclick="{!c.switchOpenClass}">
+                        <div id="UFDayPickList" aura:id="UFDayPickList" class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click uf-wide-input">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input slds-input-full">
+                                    <input type="search" id="text-input-01" placeholder="{!v.dayVar.label}" 
+                                           class="slds-input slds-text-align_center slds-m-around_x-small slds-text-body_regular uf-font uf-picklist-btn" 
+                                           aria-owns="option-list-01" role="combobox" aria-activedescendant="" aria-expanded="false" readonly="readonly" />
+                                    <button class="slds-button slds-input__icon slds-text-color--default" aria-expanded="false" tabindex="-1" title="settings">
+                                        <span style="text-align: left"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="slds-dropdown slds-dropdown--center slds-dropdown_large" role="listbox">
+                                <ul id="option-list-03" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+                                    <aura:iteration items="{!v.dayOptions}" var="dayItem">
+                                        <li role="presentation" data-uf-date="{!dayItem.value}" onclick="{!c.setDay}">
+                                            <span data-uf-date="{!dayItem.value}" class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0">
+                                                <span data-uf-date="{!dayItem.value}" class="slds-truncate uf-font">{!dayItem.label}</span>
+                                            </span>
+                                        </li>
+                                    </aura:iteration>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                    </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" class="col-xs-3">
+                <div class="slds-col">
+                    <div onclick="{!c.switchOpenClass}">
+                        <div id="UFYearPickList" aura:id="UFYearPickList" class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click uf-wide-input">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input slds-input-full">
+                                    <input type="search" id="text-input-01" placeholder="{!v.yearVar.label}" 
+                                           class="slds-input slds-text-align_center slds-m-around_x-small slds-text-body_regular uf-font uf-picklist-btn" 
+                                           aria-owns="option-list-01" role="combobox" aria-activedescendant="" aria-expanded="false" readonly="readonly" />
+                                    <button class="slds-button slds-input__icon slds-text-color--default" aria-expanded="false" tabindex="-1" title="settings">
+                                        <span style="text-align: left"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="slds-dropdown slds-dropdown--center slds-dropdown_large" role="listbox">
+                                <ul id="option-list-02" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+                                    <aura:iteration items="{!v.yearOptions}" var="yearItem">
+                                        <li role="presentation" data-uf-date="{!yearItem.value}" onclick="{!c.setYear}">
+                                            <span data-uf-date="{!yearItem.value}" class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0">
+                                                <span data-uf-date="{!yearItem.value}" class="slds-truncate uf-font">{!yearItem.label}</span>
+                                            </span>
+                                        </li>
+                                    </aura:iteration>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" class="col-xs-3">
+                    <div onclick="{!c.switchOpenClass}">
+                        <div id="UFTimePickList" aura:id="UFTimePickList" class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click uf-wide-input">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input slds-input-full">
+                                    <input type="search" id="text-input-01" placeholder="{!v.testTimeLabel}" 
+                                           class="slds-input slds-text-align_center slds-m-around_x-small slds-text-body_regular uf-font uf-picklist-btn" 
+                                           aria-owns="option-list-01" role="combobox" aria-activedescendant="" aria-expanded="false" readonly="readonly" />
+                                    <button class="slds-button slds-input__icon slds-text-color--default" aria-expanded="false" tabindex="-1" title="settings">
+                                        <span style="text-align: left"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="slds-dropdown slds-dropdown--center slds-dropdown_large" role="listbox">
+                                <ul id="option-list-04" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+                                    <aura:iteration items="{!v.timeOptions}" var="timeItem">
+                                        <li role="presentation" data-uf-date="{!timeItem.value}" onclick="{!c.setTime}">
+                                            <span data-uf-date="{!timeItem.value}" class="slds-lookup__item-action slds-lookup__item-action--label" role="option" tabindex="0">
+                                                <span data-uf-date="{!timeItem.value}" class="slds-truncate uf-font">{!timeItem.label}</span>
+                                            </span>
+                                        </li>
+                                    </aura:iteration>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" class="col-xs-1">
+            	<div>
+                    <div class="slds-clearfix">
+                        <div class="slds-float_right">
+                            <button class="slds-button slds-button_brand btn-wide btn-UF-blu btn-wide" onclick="{!c.showModalBox}">
+                                <a href="" style="text-decoration: none">WALK-UP</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+    	</lightning:layout>
+    </nav>
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_striped">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Status</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Last Name</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">First Name</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Total in Party</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Total Attended</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Event Start Time</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">City</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">State/Prov</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Admission<br />Interest</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">High School<br />Grd Yr</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Major Interest 1</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Comments</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.blankList}" var="member">
+            <!-- <aura:iteration items="{!v.memberList}" var="member"> -->
+                <c:UFToursCampaignMembers campaignMemberRec="{!member}" memberStatuses="{!v.statusOptions}" />
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>

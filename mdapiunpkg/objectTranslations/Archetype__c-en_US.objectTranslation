@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Archetype</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Archetypes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Ruleset --></label>
+        <name>Ruleset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Base Class</masterLabel>
+            <translation><!-- Base Class --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NPC Class</masterLabel>
+            <translation><!-- NPC Class --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prestige Class</masterLabel>
+            <translation><!-- Prestige Class --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sub Class</masterLabel>
+            <translation><!-- Sub Class --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

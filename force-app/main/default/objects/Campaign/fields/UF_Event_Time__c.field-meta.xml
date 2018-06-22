@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UF_Event_Time__c</fullName>
+    <description>Event Start Time</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Event Start Time. For events with recurrences, use the date of the first event.</inlineHelpText>
+    <label>UF_Event Time</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

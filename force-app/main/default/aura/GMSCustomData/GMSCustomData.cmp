@@ -1,0 +1,27 @@
+<aura:component controller="GMSCustomDataCtrl"
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:attribute name="CustomData" type="String" />
+    <aura:attribute name="tableColumns" type="String[]" />
+    <aura:attribute name="tableRows" type="String[]" />
+    <aura:attribute name="maxColumns" type="Integer" />
+    <aura:attribute name="boolean" type="boolean" default="true"/>
+    
+    <ui:scrollerWrapper class="scrollerSize">
+        <div class="slds-scrollable" style="height: 15rem;">
+            <lightning:layout multipleRows="true" class="slds-table slds-table_bordered">
+                <aura:iteration items="{!v.tableColumns}" var="col">
+                    <lightning:layoutItem padding="horizontal-small" class="slds-table slds-table_bordered gms-header" size="{!12/v.maxColumns}">
+                        {!col.Name}
+                    </lightning:layoutItem>
+                </aura:iteration>
+                <aura:iteration items="{!v.tableRows}" var="rec">
+                    <lightning:layoutItem padding="horizontal-small" class="slds-table slds-table_bordered gms-record" size="{!12/v.maxColumns}">
+                        {!rec.Name}
+                    </lightning:layoutItem>
+                </aura:iteration>
+            </lightning:layout>
+        </div>
+    </ui:scrollerWrapper>
+</aura:component>

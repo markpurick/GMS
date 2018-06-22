@@ -1,0 +1,63 @@
+<aura:component controller="UFToursController">
+    <aura:attribute name="campaignMemberRec" type="CampaignMember" />
+    <aura:attribute name="memberStatuses" type="List" />
+    <aura:attribute name="statusValue" type="String" />
+    <tr>
+        <td scope="col" class="slds-cell-wrap">  
+            <div class="slds-col">
+                <select id="UFStatusPickListInput" aura:id="UFStatusPickListInput" class="btn btn-default" onchange="{!c.updateStatus}">
+                    <aura:iteration items="{!v.memberStatuses}" var="statusItem">
+                        <aura:if isTrue="{!statusItem.disabled}">
+                            <aura:set attribute="else">
+                                <option role="presentation" label="{!statusItem.label}" value="{!statusItem.label}" 
+                                        selected="{!(statusItem.value == v.campaignMemberRec.Status) ? 'true' : 'false'}"
+                                        data-uf-date="{!statusItem.value}" onclick="{!c.updateStatus}" />
+                            </aura:set>
+                        </aura:if>
+                    </aura:iteration>
+                </select>
+            </div>
+        </td>
+        <td scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate">{!v.campaignMemberRec.LastName}</div>
+        </td>
+        <td scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate">{!v.campaignMemberRec.FirstName}</div>
+        </td>
+        <td scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate">{!v.campaignMemberRec.UF_Total_in_Party_Number__c}</div>
+        </td>
+        <td scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate">
+                <ui:inputText size="2" maxlength="2" change="{!c.updateStatus}" value="{!v.campaignMemberRec.UF_Total_Attended__c}">
+                    {!v.campaignMemberRec.UF_Total_Attended__c}
+                </ui:inputText>
+            </div>
+        </td>
+        <td scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate"><ui:outputDate format="hh:mm a" value="{!v.campaignMemberRec.Campaign.UF_Event_Time__c}"></ui:outputDate></div>
+        </td>
+        <td scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate">{!v.campaignMemberRec.City}</div>
+        </td>
+        <td scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate">{!v.campaignMemberRec.State}</div>
+        </td>
+        <td scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate">{!v.campaignMemberRec.Lead.Admission_Interest__c}</div>
+        </td>
+        <td scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate">{!v.campaignMemberRec.Lead.High_School_Graduation_Year__c}</div>
+        </td>
+        <td scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate">{!v.campaignMemberRec.Lead.Major_Interest_1__c}</div>
+        </td>
+        <td scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate">
+                <ui:inputText change="{!c.updateStatus}" value="{!v.campaignMemberRec.Comments__c}">
+                    {!v.campaignMemberRec.Comments__c}
+                </ui:inputText>
+            </div>
+        </td>
+    </tr>
+</aura:component>

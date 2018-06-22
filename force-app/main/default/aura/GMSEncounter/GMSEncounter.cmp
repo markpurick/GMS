@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:attribute name="recordId" type="String" />
+	<aura:attribute name="encounter" type="Object"/>
+    <aura:attribute name="simpleEnc" type="Object"/>
+    <aura:attribute name="encError" type="String"/>
+    
+    <force:recordData aura:id="noteLoader"
+        recordId="{!v.recordId}"
+        fields="Id, Name, Description__c, Type__c, Region__c, CR__c"
+        targetRecord="{!v.encounter}"
+        targetFields="{!v.simpleEnc}"
+        targetError="{!v.encError}"
+    />
+	
+    <lightning:layout class="botMargin8">
+        <lightning:layoutItem flexibility="auto" padding="horizontal-small">
+            <ui:outputText value="{! 'CR: ' + v.simpleEnc.CR__c}" class="gms-strong" /> :: <ui:outputText value="{!v.simpleEnc.Name}" />
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

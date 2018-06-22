@@ -1,0 +1,164 @@
+<aura:component controller="UFToursController" implements='flexipage:availableForAllPageTypes'>
+    <ltng:require styles="{!$Resource.Bootstrap + '/bootstrap-3.3.7-dist/css/bootstrap.css'}" />
+    <aura:attribute name="statusOptions" type="List" />
+    <aura:attribute name="monthOptions" type="List" />
+    <aura:attribute name="yearOptions" type="List" />
+    <aura:attribute name="dayOptions" type="List" />
+    <aura:attribute name="timeOptions" type="List" />
+    <aura:attribute name="dependantOptions" type="List" />
+    <aura:attribute name="campaignList" type="Campaign[]" />
+    <aura:attribute name="memberList" type="CampaignMember[]" />
+    <aura:attribute name="monthVar" type="Integer" />
+    <aura:attribute name="dayVar" type="Integer" />
+    <aura:attribute name="yearVar" type="Integer" />
+    <aura:attribute name="timeVar" type="Integer" />
+    <aura:handler name="init" value="{!this}" action="{!c.loadOptions}" />
+    <aura:handler name="members" value="{!v.memberList}" action="{!c.loadMembers}" />
+    <aura:handler name="campaigns" value="{!v.campaignList}" action="{!c.loadCampaigns}" />
+    <aura:handler event="c:aeUpdateTourMemberList" action="{!c.loadMembers}"/>
+    <div class="UF-Top-Padding">
+        <div class="container-fluid UF-Container">
+            <lightning:layout horizontalAlign="space">
+                <lightning:layoutItem flexibility="auto" padding="around-small" class="col-xs-3">
+                    <ui:inputSelect aura:id="UFMonthPickList" class="btn btn-default btn-block dropdown-toggle" change="{!c.setMonth}">
+                        <aura:iteration items="{!v.monthOptions}" var="monthItem">
+                            <ui:inputSelectOption text="{!monthItem.value}" label="{!monthItem.label}" value="{!monthItem.selected}" />
+                        </aura:iteration>
+                    </ui:inputSelect>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small" class="col-xs-3">
+                    <ui:inputSelect aura:id="UFDayPickList" class="btn btn-default btn-block dropdown-toggle" change="{!c.setDay}">
+                        <aura:iteration items="{!v.dayOptions}" var="dayItem">
+                            <ui:inputSelectOption text="{!dayItem.value}" label="{!dayItem.label}" value="{!dayItem.selected}" />
+                        </aura:iteration>
+                    </ui:inputSelect>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small" class="col-xs-3">
+                    <ui:inputSelect aura:id="UFYearPickList" class="btn btn-default btn-block dropdown-toggle" change="{!c.setYear}">
+                        <aura:iteration items="{!v.yearOptions}" var="yearItem">
+                            <ui:inputSelectOption text="{!yearItem.value}" label="{!yearItem.label}" value="{!yearItem.selected}" />
+                        </aura:iteration>
+                    </ui:inputSelect>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small" class="col-xs-3">
+                    <ui:inputSelect aura:id="UFTimePickList" class="btn btn-default btn-block dropdown-toggle" change="{!c.setTime}">
+                        <aura:iteration items="{!v.timeOptions}" var="timeItem">
+                            <ui:inputSelectOption text="{!timeItem.value}" label="{!timeItem.label}" />
+                        </aura:iteration>
+                    </ui:inputSelect>
+                </lightning:layoutItem>
+            </lightning:layout>
+            <lightning:layout horizontalAlign="space">
+                <div class="UF-Text-Size">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="Actions" class="UFCapitalize">Actions</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="Last Name" class="UFCapitalize">Last Name</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="First Name" class="UFCapitalize">First Name</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="Total in Party" class="UFCapitalize">Total<br />in Party</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="Event Start Time" class="UFCapitalize">Event Start<br />Time</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="Campaign Name" class="UFCapitalize">Campaign Name</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="City" class="UFCapitalize">City</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="State/Province" class="UFCapitalize">State<br />/Prov</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="Admission Interest" class="UFCapitalize">Admission<br />Interest</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="Entry Term" class="UFCapitalize">Entry<br />Term</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="Entry Year" class="UFCapitalize">Entry<br />Year</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="High School Graduation Year" class="UFCapitalize">High School<br />Grd Yr</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="Major Interest 1" class="UFCapitalize">Major<br />Interest 1</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="Major Interest 2" class="UFCapitalize">Major<br />Interest 2</div>
+                                </th>
+                                <th scope="col" class="col-xs-1">
+                                    <div title="Major Interest 3" class="UFCapitalize">Major<br />Interest 3</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.memberList}" var="member">
+                            <c:UFToursCampaignMembers campaignMemberRec="{!member}" memberStatuses="{!v.statusOptions}" />
+                            <!--  <tr>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <ui:inputSelect aura:id="UFStatusPickList" class="btn btn-success btn-block btn-font dropdown-toggle " change="{!c.setStatus}">
+                                        <aura:iteration items="{!v.statusOptions}" var="statusItem">
+                                            <ui:inputSelectOption text="{!statusItem.value}" label="{!statusItem.label}" />
+                                        </aura:iteration>
+                                    </ui:inputSelect>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.LastName}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.FirstName}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.UF_Total_in_Party_Number__c}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div><ui:outputDate format="hh:mm" value="{!member.Campaign.UF_Event_Time__c}"></ui:outputDate></div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.Campaign.Name}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.City}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.State}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.Lead.Admission_Interest__c}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.Lead.Entry_Term__c}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.Lead.Entry_Year__c}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.Lead.High_School_Graduation_Year__c}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.Lead.Major_Interest_1__c}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.Lead.Major_Interest_2__c}</div>
+                                </td>
+                                <td scope="col" class="col-xs-1 UF-Column">
+                                    <div>{!member.Lead.Major_Interest_3__c}</div>
+                                </td>
+                            </tr> -->
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+            </lightning:layout>
+        </div>
+    </div>        
+</aura:component>

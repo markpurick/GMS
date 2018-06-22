@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="region" type="Object"/>
+    <aura:attribute name="simpleregion" type="Object"/>
+    <aura:attribute name="regionError" type="String"/>
+    
+    <force:recordData aura:id="regionLoader"
+        recordId="{!v.recordId}"
+        fields="Id,Name,Description"
+        targetRecord="{!v.region}"
+        targetFields="{!v.simpleregion}"
+        targetError="{!v.regionError}"
+    />
+	
+    <lightning:layout class="botMargin8">
+        <lightning:layoutItem flexibility="auto" class="slds-m-around_medium">
+            <div class="slds-grid">
+            	<div class="slds-col">
+                    <ui:outputText value="{!v.simpleregion.Name}" class="slds-text-heading_medium" />
+                    <br/>
+                    <ui:outputText value="{!v.simpleregion.Description}" class="slds-text-heading_small" />
+                    </div>
+            	<div class="slds-col">
+                    <!-- <ui:button label="Set Party Location" press="{!c.}" /> -->
+            	</div>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

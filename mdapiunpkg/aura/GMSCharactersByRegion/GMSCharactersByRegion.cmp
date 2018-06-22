@@ -1,0 +1,14 @@
+<aura:component controller="GMSCharacterByRegion" 
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="charList" type="List"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <ui:scrollerWrapper class="scrollerSize">
+        <div class="slds-scrollable" style="height: 36vh;">
+            <aura:iteration items="{!v.charList}" var="char">
+                <c:GMSCharacterSmall recordId="{!char.Id}"></c:GMSCharacterSmall>
+            </aura:iteration>
+        </div>
+    </ui:scrollerWrapper>
+    <div style="padding-bottom: 6px;"> </div>
+</aura:component>

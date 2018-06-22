@@ -1,0 +1,14 @@
+<aura:component controller="GMSEncounterList" 
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="encounters" type="List"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <ui:scrollerWrapper class="scrollerSize">
+        <div class="slds-scrollable" style="height: 20rem;">
+            <aura:iteration items="{!v.encounters}" var="enc">
+                <c:GMSEncounter recordId="{!enc.Id}"></c:GMSEncounter>
+            </aura:iteration>
+        </div>
+    </ui:scrollerWrapper>
+    <div style="padding-bottom: 6px;"> </div>
+</aura:component>

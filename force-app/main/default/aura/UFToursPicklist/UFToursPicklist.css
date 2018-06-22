@@ -1,0 +1,49 @@
+.THIS .slds-uf-container {
+    margin-left: 10px !important;
+}
+.THIS .uf-font {
+    font-size: 14px;
+}
+.THIS input::-webkit-input-placeholder { font-size:14px }
+.THIS input::-moz-placeholder { font-size:14px } /* firefox 19+ */
+.THIS input:-ms-input-placeholder { font-size:14px } /* ie */
+.THIS input:-moz-placeholder { font-size:14px }
+.THIS .uf-wide-input {
+    width: 100%;
+}
+.THIS .slds-input-full {
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+}
+.THIS .slds-input-half {
+    width: 50%;
+    padding: 0px 10px 0px 10px;
+}
+.THIS .slds-table {
+    padding-top: -10px;
+    margin-top: -10px;
+}
+.THIS .uf-picklist-btn {
+    padding: 3px 10px 3px 10px;
+}
+.THIS .UF-navbar-white {
+    padding-top: 5px;
+    background: #ffffff;
+}
+.THIS .btn-wide {
+    padding: 3px 5px;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+.THIS .btn-UF-blu {
+    border-color: #6C9AC3; 
+    background-color: #6C9AC3; 
+    color: #fff !important;   
+}
+.THIS .btn-UF-blu a {
+    color: #fff !important;
+    font-size: 12px;
+}
+.THIS .btn-UF-blu:focus {
+  	background-color: #6C9AC3;
+}

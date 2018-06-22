@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Update Campaign Member Status" >
+    <aura:attribute name="selectedMember" type="CampaignMember" />
+    <aura:attribute name="memberStatuses" type="List" />
+</aura:event>

@@ -1,0 +1,12 @@
+<aura:component controller="GMSEncounterCharList" 
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="characterList" type="List"></aura:attribute>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:iteration items="{!v.characterList}" var="char">
+        <!-- <ui:outputText value="{!char.Id}" /> -->
+    	<c:GMSCharacterTile recordId="{!char.Id}"></c:GMSCharacterTile>
+        <div style="padding-bottom: 6px;"></div>
+    </aura:iteration>
+</aura:component>

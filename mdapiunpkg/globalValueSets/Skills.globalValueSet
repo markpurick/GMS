@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Acrobatics</fullName>
+        <default>false</default>
+        <label>Acrobatics</label>
+    </customValue>
+    <customValue>
+        <fullName>Arcane Lore</fullName>
+        <default>false</default>
+        <label>Arcane Lore</label>
+    </customValue>
+    <customValue>
+        <fullName>Balance</fullName>
+        <default>false</default>
+        <label>Balance</label>
+    </customValue>
+    <customValue>
+        <fullName>Bluff</fullName>
+        <default>false</default>
+        <label>Bluff</label>
+    </customValue>
+    <customValue>
+        <fullName>Climb</fullName>
+        <default>false</default>
+        <label>Climb</label>
+    </customValue>
+    <customValue>
+        <fullName>Diplomacy</fullName>
+        <default>false</default>
+        <label>Diplomacy</label>
+    </customValue>
+    <customValue>
+        <fullName>Disable Device</fullName>
+        <default>false</default>
+        <label>Disable Device</label>
+    </customValue>
+    <customValue>
+        <fullName>Hide</fullName>
+        <default>false</default>
+        <label>Hide</label>
+    </customValue>
+    <customValue>
+        <fullName>Intimidate</fullName>
+        <default>false</default>
+        <label>Intimidate</label>
+    </customValue>
+    <customValue>
+        <fullName>Jump</fullName>
+        <default>false</default>
+        <label>Jump</label>
+    </customValue>
+    <customValue>
+        <fullName>Move Silently</fullName>
+        <default>false</default>
+        <label>Move Silently</label>
+    </customValue>
+    <customValue>
+        <fullName>Open Lock</fullName>
+        <default>false</default>
+        <label>Open Lock</label>
+    </customValue>
+    <customValue>
+        <fullName>Perform</fullName>
+        <default>false</default>
+        <label>Perform</label>
+    </customValue>
+    <customValue>
+        <fullName>Religious Lore</fullName>
+        <default>false</default>
+        <label>Religious Lore</label>
+    </customValue>
+    <customValue>
+        <fullName>Search</fullName>
+        <default>false</default>
+        <label>Search</label>
+    </customValue>
+    <customValue>
+        <fullName>Spot</fullName>
+        <default>false</default>
+        <label>Spot</label>
+    </customValue>
+    <customValue>
+        <fullName>Use Magical Device</fullName>
+        <default>false</default>
+        <label>Use Magical Device</label>
+    </customValue>
+    <customValue>
+        <fullName>Wilderness Lore</fullName>
+        <default>false</default>
+        <label>Wilderness Lore</label>
+    </customValue>
+    <description>Skills a character has</description>
+    <masterLabel>Skills</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

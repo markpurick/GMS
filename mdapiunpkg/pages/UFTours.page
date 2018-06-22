@@ -1,0 +1,134 @@
+<apex:page controller="ToursController" sidebar="false" showHeader="false" standardStylesheets="false">
+    <apex:stylesheet value="{!$Resource.Bootstrap + '/bootstrap-3.3.7-dist/css/bootstrap.css'}" />
+    <nav class="navbar navbar-nav navbar-fixed-top" role="navigation">
+        <div class="container">
+            <apex:form >
+                <br />
+                <div class="row">
+                    <div class="col-lg-2">
+                        <apex:selectList value="{!campMonth}" id="UFMonthPickList" multiselect="false" size="1"
+                                         styleClass="btn btn-default navbar-btn">
+                        	<apex:selectOptions value="{!months}" ></apex:selectOptions>
+                            <apex:actionSupport event="onchange" action="{!refreshCampaigns}" reRender="selectCampaigns" />
+                        </apex:selectList>
+                    </div>
+                    <div class="col-lg-2">
+                        <apex:selectList value="{!campDay}" id="UFDayPickList" multiselect="false" size="1"
+                                         styleClass="btn btn-default navbar-btn">
+                        	<apex:selectOptions value="{!days}" ></apex:selectOptions>
+                            <apex:actionSupport event="onchange" action="{!refreshCampaigns}" reRender="selectCampaigns" />
+                        </apex:selectList>
+                    </div>
+                    <div class="col-lg-2">
+                        <apex:selectList value="{!campYear}" id="UFYearPickList" multiselect="false" size="1"
+                                         styleClass="btn btn-default navbar-btn">
+                        	<apex:selectOptions value="{!years}" ></apex:selectOptions>
+                            <apex:actionSupport event="onchange" action="{!refreshCampaigns}" reRender="selectCampaigns" />
+                        </apex:selectList>
+                    </div>
+                    <div class="col-lg-2">
+                        <apex:selectList value="{!campaignId}" id="selectCampaigns" multiselect="false" size="1"
+                                         styleClass="btn btn-default navbar-btn">
+                        	<apex:selectOptions value="{!campaignNames}" ></apex:selectOptions>
+                            <apex:actionSupport event="onchange" action="{!refreshMembers}" reRender="memberTable" />
+                        </apex:selectList>
+                    </div>
+                </div>
+            </apex:form>
+        </div>
+    </nav>
+    <table>
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Actions</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Last Name</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">First Name</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Total in Party</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Total Attended</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Event Start Time</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">City</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">State/Prov</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Admission<br />Interest</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">High School<br />Grd Yr</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Major Interest 1</div>
+                </th>
+                <th scope="col" class="slds-cell-wrap">
+                    <div class="slds-truncate">Comments</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+    		<apex:outputPanel id="memberTable" layout="block">
+                <apex:repeat value="{!campaigns}" var="campMember">
+                    <tr>
+                        <apex:form >
+                            <td></td>
+                            <td scope="col" class="slds-cell-wrap">
+                                <div class="slds-truncate">{!campMember.LastName}</div>
+                            </td>
+                            <td scope="col" class="slds-cell-wrap">
+                        		<div class="slds-truncate">{!campMember.FirstName}</div>
+                            </td>
+                            <td scope="col" class="slds-cell-wrap">
+                                <div class="slds-truncate">{!campMember.UF_Total_in_Party_Number__c}</div>
+                            </td>
+                            <td scope="col" class="slds-cell-wrap">
+                                <div class="slds-truncate">
+                                    <apex:inputText size="2" maxlength="2" value="{!campMember.UF_Total_Attended__c}" />
+                                </div>
+                            </td>
+                            <td scope="col" class="slds-cell-wrap">
+                                <div class="slds-truncate">
+                                    <apex:outputText value="{0,date,hh:mm a z}">
+                                		<apex:param value="{!campMember.Campaign.UF_Event_Time__c}" />
+                                    </apex:outputText>
+                                </div>
+                            </td>
+                            <td scope="col" class="slds-cell-wrap">
+                                <div class="slds-truncate">{!campMember.City}</div>
+                            </td>
+                            <td scope="col" class="slds-cell-wrap">
+                                <div class="slds-truncate">{!campMember.State}</div>
+                            </td>
+                            <td scope="col" class="slds-cell-wrap">
+                                <div class="slds-truncate">{!campMember.Lead.Admission_Interest__c}</div>
+                            </td>
+                            <td scope="col" class="slds-cell-wrap">
+                                <div class="slds-truncate">{!campMember.Lead.High_School_Graduation_Year__c}</div>
+                            </td>
+                            <td scope="col" class="slds-cell-wrap">
+                                <div class="slds-truncate">{!campMember.Lead.Major_Interest_1__c}</div>
+                            </td>
+                            <td scope="col" class="slds-cell-wrap">
+                                <div class="slds-truncate">
+                                    <apex:inputText value="{!campMember.Comments__c}" />
+                                </div>
+                            </td>
+                        </apex:form>
+                    </tr>
+                </apex:repeat>
+    		</apex:outputPanel>
+        </tbody>
+    </table>
+</apex:page>

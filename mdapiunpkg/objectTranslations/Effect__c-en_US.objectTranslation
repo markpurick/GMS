@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Effect</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Effects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Effect Details --></label>
+        <name>Effect_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Icon Background Color --></label>
+        <name>Icon_Background_Color__c</name>
+        <picklistValues>
+            <masterLabel>gm-icon-blue</masterLabel>
+            <translation><!-- gm-icon-blue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>gm-icon-brown</masterLabel>
+            <translation><!-- gm-icon-brown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>gm-icon-green</masterLabel>
+            <translation><!-- gm-icon-green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>gm-icon-grey</masterLabel>
+            <translation><!-- gm-icon-grey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>gm-icon-orange</masterLabel>
+            <translation><!-- gm-icon-orange --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>gm-icon-purple</masterLabel>
+            <translation><!-- gm-icon-purple --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>gm-icon-red</masterLabel>
+            <translation><!-- gm-icon-red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>gm-icon-yellow</masterLabel>
+            <translation><!-- gm-icon-yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Icon --></label>
+        <name>Icon__c</name>
+        <picklistValues>
+            <masterLabel>fa-asterisk</masterLabel>
+            <translation><!-- fa-asterisk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-caret-down</masterLabel>
+            <translation><!-- fa-caret-down --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-caret-up</masterLabel>
+            <translation><!-- fa-caret-up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-circle</masterLabel>
+            <translation><!-- fa-circle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-eye</masterLabel>
+            <translation><!-- fa-eye --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-fire</masterLabel>
+            <translation><!-- fa-fire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-flash</masterLabel>
+            <translation><!-- fa-flash --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-heart</masterLabel>
+            <translation><!-- fa-heart --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-hourglass</masterLabel>
+            <translation><!-- fa-hourglass --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-leaf</masterLabel>
+            <translation><!-- fa-leaf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-map-marker</masterLabel>
+            <translation><!-- fa-map-marker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-minus-circle</masterLabel>
+            <translation><!-- fa-minus-circle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-plus</masterLabel>
+            <translation><!-- fa-plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-question-circle</masterLabel>
+            <translation><!-- fa-question-circle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-shield</masterLabel>
+            <translation><!-- fa-shield --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-stop-circle</masterLabel>
+            <translation><!-- fa-stop-circle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-times-circle</masterLabel>
+            <translation><!-- fa-times-circle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fa-tint</masterLabel>
+            <translation><!-- fa-tint --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Ruleset --></label>
+        <name>Ruleset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Save --></label>
+        <name>Save__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

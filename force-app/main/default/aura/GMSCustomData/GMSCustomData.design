@@ -1,0 +1,4 @@
+<design:component >
+	<design:attribute name="CustomData" label="Custom Data" description="" />
+	<!-- <design:attribute name="CustomData" label="Custom Data" datasource="apex://GMSCustomDataDesignResourcePickList" description="Is it working? If not, just have input for ID." /> -->
+</design:component>

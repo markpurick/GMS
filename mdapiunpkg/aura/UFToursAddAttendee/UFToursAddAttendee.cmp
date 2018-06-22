@@ -1,0 +1,31 @@
+<aura:component implements='flexipage:availableForAllPageTypes' controller='UFToursController'>
+    <ltng:require styles="{!$Resource.Bootstrap + '/bootstrap-3.3.7-dist/css/bootstrap.css'}" />
+    <aura:registerEvent name="appEvent" type="c:aeUpdateTourMemberList"/>
+    <aura:attribute name="firstName" type="String" />
+    <aura:attribute name="lastName" type="String" />
+    <aura:attribute name="emailAddress" type="String" />
+    <aura:attribute name="numOfAttending" type="Integer" />
+    <div class="container-fluid UF-Container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <ui:inputText class="form-control" placeholder="First" value="{!v.firstName}" />
+                <!-- <input type="text" class="form-control" placeholder="First" aria-describedby="sizing-addon2" /> -->
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <ui:inputText class="form-control" placeholder="Last" value="{!v.lastName}" />
+                <!-- <input type="text" class="form-control" placeholder="Last" /> -->
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <ui:inputText class="form-control" placeholder="Email Address" value="{!v.emailAddress}" />
+                <!-- <input type="text" class="form-control" placeholder="Email Address" /> -->
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <ui:inputText class="form-control" placeholder="# of Attendees" value="{!v.numOfAttending}" />
+                <!-- <input type="text" class="form-control" placeholder="# of Attendees" /> -->
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1">
+                <ui:button class="btn btn-UF-blu btn-wide pull-right" press="{!c.addAttendee}">Add</ui:button>
+            </div>
+        </div>
+    </div>
+</aura:component>

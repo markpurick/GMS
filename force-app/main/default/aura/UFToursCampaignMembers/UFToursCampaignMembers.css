@@ -1,0 +1,45 @@
+.THIS .uf-font {
+    font-size: 12px;
+}
+.THIS .btn-font {
+    font-size: 12px;
+}
+.THIS .btn-less-padding {
+    padding: 1px 1px 1px 3px !important;
+}
+.THIS .btn-UF-blu {
+    background-color: #6C9AC3; 
+    color: #fff !important;  
+}
+.THIS .btn-UF-blu span {
+    color: #fff !important;
+}
+.THIS .btn-UF-ora {
+    background-color: #E28F41;
+    color: #fff !important;
+    text-shadow: 1px 0 0 #A52A2A, -1px 0 0 #A52A2A, 0 1px 0 #A52A2A, 0 -1px 0 #A52A2A, 
+            1px 1px #A52A2A, -1px -1px 0 #A52A2A, 1px -1px 0 #A52A2A, -1px 1px 0 #A52A2A !important;
+}
+.THIS .btn-UF-ora span {
+    color: #fff !important;
+    text-shadow: 1px 0 0 #A52A2A, -1px 0 0 #A52A2A, 0 1px 0 #A52A2A, 0 -1px 0 #A52A2A, 
+            1px 1px #A52A2A, -1px -1px 0 #A52A2A, 1px -1px 0 #A52A2A, -1px 1px 0 #A52A2A !important;
+}
+.THIS .btn-UF-ora:focus {
+  	background-color: #E28F41;
+}
+.THIS .slds-picklist__input:focus {
+  	background-color: #6C9AC3;
+}
+.THIS .btn-UF-blu:focus {
+  	background-color: #6C9AC3 !important;
+    color: #fff !important;
+}
+.THIS li:focus {
+  	background-color: #6C9AC3 !important;
+    color: #fff !important;
+}
+.THIS .slds-form-element__label {
+      display : none;
+      visibility : hidden;
+}

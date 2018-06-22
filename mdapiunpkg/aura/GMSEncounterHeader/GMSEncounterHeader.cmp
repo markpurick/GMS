@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+   access="global">
+	<aura:attribute name="char" type="Object"/>
+    <aura:attribute name="simpleChar" type="Object"/>
+    <aura:attribute name="charError" type="String"/>
+    <force:recordData aura:id="charRecordLoader"
+        recordId="{!v.recordId}"
+        fields="Name,Description__c,Region__c"
+        targetRecord="{!v.char}"
+        targetFields="{!v.simpleChar}"
+        targetError="{!v.charError}"
+    />
+    
+    <div>
+        <span>{!v.simpleChar.Name}</span><br />
+        <span>{!v.simpleChar.Description__c}</span><br />
+        <span>{!v.simpleChar.Region__c}</span><br />
+    </div>
+</aura:component>

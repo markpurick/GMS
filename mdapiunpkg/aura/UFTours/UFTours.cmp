@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="parentCmpCampaign" type="String" />
+    <aura:handler name="compEvent" event="c:UFToursCampaignEvent" action="{!c.handleCampaignFoundEvent}" phase="capture" />
+    <c:UFToursPicklist aura:id="UFToursPicklist" campaignSelected="{!c.handleCampaignFoundEvent}" />
+    <c:UFToursAddLead aura:id="UFToursAddLead" tourCampaign="{!v.parentCmpCampaign}" refreshMembers="{!c.callReloadMembers}" />
+</aura:component>

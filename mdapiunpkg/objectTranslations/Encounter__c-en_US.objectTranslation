@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Encounter</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Encounters</value>
+    </caseValues>
+    <fields>
+        <label><!-- CR --></label>
+        <name>CR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <relationshipLabel><!-- Encounters --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Contest</masterLabel>
+            <translation><!-- Contest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quest</masterLabel>
+            <translation><!-- Quest --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Encounter Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- The record used to reference when constructing an encounter. --></description>
+        <label><!-- Base --></label>
+        <name>Base</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- An instance of the Base encounter record to be used to record damage and results. --></description>
+        <label><!-- Instance --></label>
+        <name>Instance</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

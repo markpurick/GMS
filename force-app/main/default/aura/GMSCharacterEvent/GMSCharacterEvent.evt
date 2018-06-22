@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Notify other components that a charcter was selected.">
+    <aura:attribute name="character" type="Object"/>
+</aura:event>

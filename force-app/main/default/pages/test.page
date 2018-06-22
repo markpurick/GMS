@@ -1,0 +1,11 @@
+<apex:page standardController="Account">
+    <apex:form >
+        <apex:pageBlock title="This is a test...">
+            <apex:pageMessages />
+            <apex:pageBlockSection >
+                <p>This is only a test</p>
+                <h4>Header added via Aside.io</h4>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

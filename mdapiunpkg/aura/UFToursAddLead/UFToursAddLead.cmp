@@ -1,0 +1,134 @@
+<aura:component controller="UFToursController" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="tourCampaign" type="String" />
+    <aura:attribute name="tourLead" type="Lead" default="{ sobjectType: 'Lead' }" />   
+    <aura:attribute name="selectedInterest" type="SelectOption" />    
+    <aura:attribute name="interestList" type="SelectOption[]" />
+    <aura:attribute name="selectedState" type="SelectOption" />    
+    <aura:attribute name="stateList" type="SelectOption[]" />
+    <aura:attribute name="selectedCountry" type="SelectOption" />    
+    <aura:attribute name="countryList" type="SelectOption[]" />
+    <aura:attribute name="tourAttended" type="Integer" />
+    <aura:attribute name="errorLabel" type="String" />
+    <aura:attribute name="errorCount" type="Integer" />
+    <aura:handler name="init" value="{!this}" action="{!c.loadOptions}" />
+    <aura:registerEvent name="refreshMembers" type="c:UFLoadMembers" description="Update list of campaign members based on filters selected" />
+    
+    <div id="addLeadModal" class="demo-only" style="height: 640px; display:none;">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h1 id="modal-heading-01" class="slds-text-heading_large slds-hyphenate">Add Attendee</h1>
+                </header>
+                <form>
+                <div class="slds-modal__content slds-p-around_medium">
+                	<br />
+                    <div class="uf-wide-input">
+                        <div aura:id="errors" class="slds-text-align_center uf-error-text">{!v.errorLabel}</div>
+                    </div>
+                    <div class="uf-wide-input">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input uf-wide-input">
+                                <ui:inputText placeholder="First Name" value="{!v.tourLead.FirstName}"
+                                       class="slds-input slds-text-align_center slds-text-body_regular uf-font"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uf-wide-input">
+                        <div class="slds-form-element">
+                            <div aura:id="UFLastName" class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input slds-input-full uf-wide-input">
+                                <ui:inputText placeholder="Last Name" value="{!v.tourLead.LastName}" blur="{!c.validateLastName}"
+                                       class="slds-input slds-text-align_center slds-text-body_regular uf-font"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uf-wide-input">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input slds-input-full uf-wide-input">
+                                <ui:inputText placeholder="City" value="{!v.tourLead.City}"
+                                       class="slds-input slds-text-align_center slds-text-body_regular uf-font"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div onclick="{!c.switchOpenClass}">
+                        <div id="UFStatePickList" aura:id="UFStatePickList" class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click slds-input-full">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input uf-wide-input">
+                                    <input id="text-input-01" value="{!v.tourLead.StateCode}" placeholder="State"
+                                           class="slds-input slds-text-align_center slds-text-body_regular uf-picklist-btn" 
+                                           aria-owns="option-list-01" role="combobox" aria-activedescendant="" aria-expanded="false" readonly="readonly" />
+                                    <button class="slds-button slds-input__icon slds-text-color--default" aria-expanded="false" tabindex="-1" title="settings">
+                                        <span style="text-align: left"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="slds-dropdown slds-dropdown--center slds-dropdown_large" role="listbox">
+                                <ul id="option-list-01" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+                                    <aura:iteration items="{!v.stateList}" var="stateItem">
+                                        <li role="presentation" onclick="{!c.setState}">
+                                            <span data-uf-date="{!stateItem.label}" 
+                                                  class="slds-lookup__item-action slds-lookup__item-action--label slds-truncate slds-text-body_regular uf-font" 
+                                                  role="option" tabindex="0">{!stateItem.value}
+                                            </span>
+                                        </li>
+                                    </aura:iteration>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div onclick="{!c.switchOpenClass}">
+                        <div id="UFIntPickList" aura:id="UFIntPickList" class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click slds-input-full">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input uf-wide-input">
+                                    <input id="text-input-01" value="{!v.tourLead.Admission_Interest__c}" placeholder="Select Admission Interest"
+                                           class="slds-input slds-text-align_center slds-text-body_regular uf-font uf-picklist-btn" 
+                                           aria-owns="option-list-01" role="combobox" aria-activedescendant="" aria-expanded="false" readonly="readonly" />
+                                    <button class="slds-button slds-input__icon slds-text-color--default" aria-expanded="false" tabindex="-1" title="settings">
+                                        <span style="text-align: left"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="slds-dropdown slds-dropdown--center slds-dropdown_large" role="listbox">
+                                <ul id="option-list-01" class="slds-dropdown__list slds-dropdown--length-5" role="presentation">
+                                    <aura:iteration items="{!v.interestList}" var="interestItem">
+                                        <li role="presentation" onclick="{!c.setInterest}">
+                                            <span data-uf-date="{!interestItem.value}" 
+                                                  class="slds-lookup__item-action slds-lookup__item-action--label slds-truncate slds-text-body_regular uf-font" 
+                                                  role="option" tabindex="0">
+                                               {!interestItem.label}
+                                            </span>
+                                        </li>
+                                    </aura:iteration>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uf-wide-input">
+                        <div class="slds-form-element">
+                            <div aura:id="UFEmailAddress" class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input slds-input-full uf-wide-input">
+                                <ui:inputEmail placeholder="Email Address" value="{!v.tourLead.Email}" blur="{!c.validateLeadEmail}"
+                                       class="slds-input slds-text-align_center slds-text-body_regular uf-font"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uf-wide-input">
+                        <div class="slds-form-element">
+                            <div aura:id="UFNumOfAttendees" class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right slds-picklist__input slds-input-full uf-wide-input">
+                                <ui:inputNumber placeholder="# of Attendees" value="{!v.tourAttended}" blur="{!c.validateAttended}" maxlength="1"
+                                       class="slds-input slds-text-align_center slds-text-body_regular uf-font"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick="{!c.hideModalBox}">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick="{!c.addAttendee}">Save</button>
+                </footer>
+                </form>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</aura:component>

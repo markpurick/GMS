@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Instance</fullName>
+    <active>true</active>
+    <description>An instance of the Base encounter record to be used to record damage and results.</description>
+    <label>Instance</label>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Contest</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Quest</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

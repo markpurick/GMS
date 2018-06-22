@@ -1,0 +1,19 @@
+<aura:component controller="GMSNotesListController" 
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="noteList" type="List"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <ui:scrollerWrapper class="scrollerSize">
+        <div class="slds-scrollable" style="height: 20rem;">
+            <aura:iteration items="{!v.noteList}" var="noteList">
+                <aura:if isTrue="{noteList.Notes}">
+                    No Notes to display
+                </aura:if>
+                <aura:iteration items="{!noteList.Notes}" var="note">
+                    <c:GMSNote recordId="{!note.Id}"></c:GMSNote>
+                </aura:iteration>
+            </aura:iteration>
+        </div>
+    </ui:scrollerWrapper>
+    <div style="padding-bottom: 6px;"> </div>
+</aura:component>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RPG Campaign</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>RPG Campaigns</value>
+    </caseValues>
+    <fields>
+        <label><!-- Campaign Region --></label>
+        <name>Campaign_Region__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Must match Character object&apos;s record type --></help>
+        <label><!-- Ruleset --></label>
+        <name>Ruleset__c</name>
+    </fields>
+    <layouts>
+        <layout>Contact Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

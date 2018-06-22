@@ -1,0 +1,49 @@
+<aura:component controller="DependentPicklistDemoController" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="accountId" type="String" default=""/>
+    <aura:attribute name="accountOptions" type="Object[]"/>
+    <aura:attribute name="contactId" type="String" default=""/>
+    <aura:attribute name="contactOptions" type="Object[]"/>
+    <!-- Attributes for State/Country -->
+    
+    <aura:attribute name="sampleLead" type="Lead" />
+    <aura:attribute name="stateValue" type="String" default="" />
+    <aura:attribute name="countryValue" type="String" default="United States" />
+    
+    <!-- Application-level event handlers -->
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}"/>
+
+    <!-- Application title header -->
+    <h1>Dependent Picklist Demo</h1>
+
+    <div>
+        <h2>Country</h2>
+        <select aura:id="country" onchange="{!c.handleAccountChange}">
+            <option>--None--</option>
+            <aura:iteration items="{!v.countryValue}" var="option">
+                <option value="{!option.value}">{!option.label}</option>
+            </aura:iteration>
+        </select>
+    </div>
+
+    <!-- Controlling Account picklist
+    <div>
+        <h2>Account</h2>
+        <select aura:id="account" onchange="{!c.handleAccountChange}">
+            <option>-None-</option>
+            <aura:iteration items="{!v.accountOptions}" var="option">
+                <option value="{!option.value}">{!option.label}</option>
+            </aura:iteration>
+        </select>
+    </div>
+
+    Dependent Contact picklist
+    <div>
+        <h2>Contact</h2>
+        <select aura:id="contact">
+            <option>-None-</option>
+            <aura:iteration items="{!v.contactOptions}" var="option">
+                <option value="{!option.value}">{!option.label}</option>
+            </aura:iteration>
+        </select>
+    </div> -->
+</aura:component>

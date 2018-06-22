@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Event template">
+    <aura:attribute name="campaign" type="String" description="Hold campaign when registering new attendees from other components" />
+</aura:event>

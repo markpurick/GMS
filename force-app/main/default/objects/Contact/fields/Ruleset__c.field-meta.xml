@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ruleset__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Must match Character object&#39;s record type</inlineHelpText>
+    <label>Ruleset</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Ruleset</valueSetName>
+    </valueSet>
+</CustomField>

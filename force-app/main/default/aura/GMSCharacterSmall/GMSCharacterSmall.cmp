@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:attribute name="recordId" type="String" />
+	<aura:attribute name="char" type="Object"/>
+    <aura:attribute name="simplechar" type="Object"/>
+    <aura:attribute name="charError" type="String"/>
+    
+    <force:recordData aura:id="charLoader"
+        recordId="{!v.recordId}"
+        fields="Id,Name,Profession__c"
+        targetRecord="{!v.char}"
+        targetFields="{!v.simplechar}"
+        targetError="{!v.charError}"
+    />
+	
+    <lightning:layout class="botMargin8">
+        <lightning:layoutItem flexibility="auto" padding="horizontal-small">
+            <ui:outputText value="{!v.simplechar.Name}" class="gms-strong" /> :: <ui:outputText value="{!v.simplechar.Profession__c}" />
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

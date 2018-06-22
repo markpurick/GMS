@@ -1,0 +1,38 @@
+.THIS .UF-Row {
+    position: relative;
+}
+.THIS #bottom-app {
+    position: absolute;
+    bottom: 0;
+}
+.THIS .white-back {
+    width: 100%;
+    padding-top: 7px;
+    border: 0;
+    background-color: #fff;
+}
+.THIS .btn-UF-blu {
+    background-color: #0021A5; 
+    color: #fff !important;   
+}
+.THIS .btn-UF-blu a {
+    color: #fff !important;
+}
+.THIS .btn-UF-ora {
+    background-color: #FA4616;
+    color: #fff !important;
+    text-shadow: 1px 0 0 #A52A2A, -1px 0 0 #A52A2A, 0 1px 0 #A52A2A, 0 -1px 0 #A52A2A, 
+            1px 1px #A52A2A, -1px -1px 0 #A52A2A, 1px -1px 0 #A52A2A, -1px 1px 0 #A52A2A !important;
+}
+.THIS .btn-UF-ora a {
+    color: #fff !important;
+    text-shadow: 1px 0 0 #A52A2A, -1px 0 0 #A52A2A, 0 1px 0 #A52A2A, 0 -1px 0 #A52A2A, 
+            1px 1px #A52A2A, -1px -1px 0 #A52A2A, 1px -1px 0 #A52A2A, -1px 1px 0 #A52A2A !important;
+}
+@media (max-width: 960px) {
+    .THIS .tablet-app {
+        margin: 0px;
+        padding: 0px;
+        width: 936px;
+    }
+}

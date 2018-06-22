@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>D_D_5e</fullName>
+        <default>false</default>
+        <label>Dungeons &amp; Dragons 5e</label>
+    </customValue>
+    <masterLabel>Ruleset</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

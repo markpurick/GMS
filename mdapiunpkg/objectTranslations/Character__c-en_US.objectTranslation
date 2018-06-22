@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Character</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Characters</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Character&apos;s Archetype --></label>
+        <name>Character_s_Archetype__c</name>
+        <relationshipLabel><!-- Characters --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Initiative Order --></label>
+        <name>Initiative_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- PcNpc --></label>
+        <name>PcNpc__c</name>
+        <picklistValues>
+            <masterLabel>NPC</masterLabel>
+            <translation><!-- NPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC</masterLabel>
+            <translation><!-- PC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Profession --></label>
+        <name>Profession__c</name>
+    </fields>
+    <fields>
+        <label><!-- Race --></label>
+        <name>Race__c</name>
+        <picklistValues>
+            <masterLabel>Dragonborn</masterLabel>
+            <translation><!-- Dragonborn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eladrin</masterLabel>
+            <translation><!-- Eladrin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gnome</masterLabel>
+            <translation><!-- Gnome --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Half-Elf</masterLabel>
+            <translation><!-- Half-Elf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Half-Orc</masterLabel>
+            <translation><!-- Half-Orc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Halfling</masterLabel>
+            <translation><!-- Halfling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Human</masterLabel>
+            <translation><!-- Human --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wood Elf</masterLabel>
+            <translation><!-- Wood Elf --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <relationshipLabel><!-- Characters --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Stat 10 Label --></label>
+        <name>Stat_10_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 10 --></label>
+        <name>Stat_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 1 Label --></label>
+        <name>Stat_1_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 1 --></label>
+        <name>Stat_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 2 Label --></label>
+        <name>Stat_2_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 2 --></label>
+        <name>Stat_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 3 Label --></label>
+        <name>Stat_3_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 3 --></label>
+        <name>Stat_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 4 Label --></label>
+        <name>Stat_4_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 4 --></label>
+        <name>Stat_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 5 Label --></label>
+        <name>Stat_5_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 5 --></label>
+        <name>Stat_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 6 Label --></label>
+        <name>Stat_6_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 6 --></label>
+        <name>Stat_6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 7 Label --></label>
+        <name>Stat_7_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 7 --></label>
+        <name>Stat_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 8 Label --></label>
+        <name>Stat_8_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 8 --></label>
+        <name>Stat_8__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 9 Label --></label>
+        <name>Stat_9_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stat 9 --></label>
+        <name>Stat_9__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subrace --></label>
+        <name>Subrace__c</name>
+        <picklistValues>
+            <masterLabel>Lightfoot</masterLabel>
+            <translation><!-- Lightfoot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stoutheart</masterLabel>
+            <translation><!-- Stoutheart --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Variant</masterLabel>
+            <translation><!-- Variant --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Character Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Stats --></label>
+            <section>Stats</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Add a Note --></label>
+        <name>Add_a_Note</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Base character template to use to reference when creating encounters. --></description>
+        <label><!-- Base --></label>
+        <name>Base</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- An instance of the character to use to record damage and results. --></description>
+        <label><!-- Instance --></label>
+        <name>Instance</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

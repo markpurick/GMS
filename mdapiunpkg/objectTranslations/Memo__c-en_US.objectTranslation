@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Memo</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Memos</value>
+    </caseValues>
+    <fields>
+        <label><!-- Body --></label>
+        <name>Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Id --></label>
+        <name>Parent_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Object Type --></label>
+        <name>Parent_Object_Type__c</name>
+        <picklistValues>
+            <masterLabel>Archetype_Power__c</masterLabel>
+            <translation><!-- Archetype_Power__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Archetype__c</masterLabel>
+            <translation><!-- Archetype__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Character_Power__c</masterLabel>
+            <translation><!-- Character_Power__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Character__c</masterLabel>
+            <translation><!-- Character__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom_Data__c</masterLabel>
+            <translation><!-- Custom_Data__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Effect__c</masterLabel>
+            <translation><!-- Effect__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Encounter_NPC__c</masterLabel>
+            <translation><!-- Encounter_NPC__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Encounter__c</masterLabel>
+            <translation><!-- Encounter__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plot Point</masterLabel>
+            <translation><!-- Plot Point --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RPG Campaign</masterLabel>
+            <translation><!-- RPG Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region</masterLabel>
+            <translation><!-- Region --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

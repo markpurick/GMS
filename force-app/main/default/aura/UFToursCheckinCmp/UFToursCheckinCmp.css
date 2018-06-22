@@ -1,0 +1,55 @@
+.THIS {
+}
+.THIS UF-Container {
+    margin: -93 !important;
+}
+.THIS div.UFCapitalize {
+    text-transform: uppercase;
+    text-align: left;
+}
+.THIS .UF-Column {
+    word-wrap: break-word;
+}
+.THIS .UF-btn-text {
+    font-size: 10px;
+}
+.THIS div.UF-Top-Padding {
+    margin-top: 5px;
+}
+.THIS tbody {
+    overflow:auto;
+}
+.THIS thead {
+    width: calc( 100% - 1em )
+}
+.THIS .UF-navbar-white {
+    background: #fff;
+}
+@media (min-width: 768px) {
+    .THIS UF-Container {
+        margin-left: -20px;
+    }
+	.THIS div.UFCapitalize {
+    	font-size: 60%;
+    }
+    .THIS div.UF-Text-Size {
+        font-size: 80%;
+    }
+    .THIS .btn-font{
+        font-size: 70%;
+    }
+}
+@media (min-width: 1200px) {
+    .THIS UF-Container {
+        margin-left: -20px;
+    }
+	.THIS div.UFCapitalize {
+    	font-size: 80%;
+    }
+    .THIS div.UF-Text-Size {
+        font-size: 90%;
+    }
+    .THIS .btn-font{
+        font-size: 70%;
+    }
+}

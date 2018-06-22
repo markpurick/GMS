@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Effect_Details__c</fullName>
+    <description>What is the game mechanic of the effect (ie. 1d6 damage every turn. Lasts 5 turns).</description>
+    <externalId>false</externalId>
+    <label>Effect Details</label>
+    <length>20</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

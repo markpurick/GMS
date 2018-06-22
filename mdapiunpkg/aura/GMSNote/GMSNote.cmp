@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:attribute name="recordId" type="String" />
+	<aura:attribute name="note" type="Object"/>
+    <aura:attribute name="simpleNote" type="Object"/>
+    <aura:attribute name="noteError" type="String"/>
+    
+    <force:recordData aura:id="noteLoader"
+        recordId="{!v.recordId}"
+        fields="Id,Title,Body"
+        targetRecord="{!v.note}"
+        targetFields="{!v.simpleNote}"
+        targetError="{!v.noteError}"
+    />
+	
+    <lightning:layout class="botMargin8">
+        <lightning:layoutItem flexibility="auto" padding="horizontal-small">
+            <ui:outputText value="{!v.simpleNote.Title}" class="gms-strong" /> :: <ui:outputText value="{!v.simpleNote.Body}" />
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>
